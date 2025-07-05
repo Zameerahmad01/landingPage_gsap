@@ -7,7 +7,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #020202;
 }
 
 @theme {
@@ -76,7 +76,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #070707;
+    --background: #020202;
     --foreground: #ededed;
   }
 }
