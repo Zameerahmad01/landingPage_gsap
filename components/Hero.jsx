@@ -13,7 +13,7 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   // Animation
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, SplitText);
     const titleSplit = new SplitText(".title", {
       type: "chars, words",
     });
@@ -85,7 +85,7 @@ const Hero = () => {
     );
 
     const startValue = isMobile ? "top 50%" : "center 60%";
-    const endValue = isMobile ? "120% top" : "bottom top";
+    const endValue = isMobile ? "480% top" : "bottom top";
 
     // Ensure videoRef is available and video is loaded before setting up timeline
 
@@ -96,7 +96,7 @@ const Hero = () => {
         end: endValue,
         scrub: true,
         pin: true,
-        markers: true,
+
         onEnter: () => {
           videoRef.current.play();
         },
@@ -122,11 +122,11 @@ const Hero = () => {
   return (
     <>
       <section
-        className="relative z-10 pt-24 md:pt-20 min-h-dvh w-full border border-transparent "
+        className="relative z-10 pt-44 md:pt-20 min-h-dvh w-full border border-transparent "
         id="hero"
       >
-        <h1 className="title  text-8xl md:text-[15vw] text-center leading-none font-modern-negra">
-          MOJITO
+        <h1 className="title  text-7xl md:text-[15vw] text-center leading-none font-modern-negra">
+          COCKTAIL
         </h1>
         <img
           src="/images/cocktail-left-leaf.png"
@@ -168,14 +168,14 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="w-full  md:h-[80%] h-1/2 absolute inset-0 bottom-0 left-0 md:object-contain object-bottom object-cover">
+      <div className="w-full md:h-[80%] h-full  absolute inset-0 bottom-0 left-0 md:object-contain object-bottom object-cover">
         <video
           ref={videoRef}
           src="/videos/output.mp4"
           playsInline
           preload="auto"
           muted
-          className="mx-auto"
+          className=" mx-auto"
         />
       </div>
     </>
